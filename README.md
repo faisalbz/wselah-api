@@ -14,10 +14,11 @@ composer require faisalbz/wselah-api
 
 ```php
 <?php
+use Faisalbz\WselahApi\Wselah;
 
 $api_token="tof7lsdJasdloaa57e"; // wselah.net token
 $device_id="4575845445"; // wselah.net device id
-$client = new Wselah\WselahApi($api_token,$device_id);
+$client = new Wselah($api_token,$device_id);
 
 $to="put_your_mobile_number_here";
 $text="Hello world";
