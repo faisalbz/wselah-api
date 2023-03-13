@@ -30,7 +30,7 @@
 		
 		
 		public function sendRequest($method,$path,$params=array()){
-		
+
 			if(!is_callable('curl_init')){
 				return array("Error"=>"cURL extension is disabled on your server");
 			}
@@ -43,29 +43,17 @@
 			if(strtolower($method)=="post"){
 				curl_setopt($curl, CURLOPT_POST, true);
 				curl_setopt($curl, CURLOPT_POSTFIELDS,$data);
-			}	 
+			}
 			curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
 			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($curl, CURLOPT_HTTPHEADER, array(
 				'Authorization: Bearer ' . $this->token
 				));
-
 			$response = curl_exec($curl);
-			$httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-			if($httpCode == 404) {
-				return array("Error"=>"device not found or pending please check you device id");
-			}
-			$contentType = curl_getinfo($curl, CURLINFO_CONTENT_TYPE);
-			$header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
-			$header = substr($response, 0, $header_size);
-			$body = substr($response, $header_size);
 			curl_close($curl);
-			
-			if (strpos($contentType,'application/json') !== false) {
-				return json_decode($body,true);
-			}
-		return $body;
+
+		    return $response;
 		}
 		
 		
