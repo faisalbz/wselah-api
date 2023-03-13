@@ -7,7 +7,7 @@
 		* @package wselah
 	*/
 	
-    class WselahApi {
+    class Wselah {
         protected $token = '';
         protected $device_id = '';  
 		
@@ -47,7 +47,7 @@
 			curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
 			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			curl_setopt($curl, CURLOPT_HTTPHEADER, array(
 				'Authorization: Bearer ' . $this->token
 				));
 
