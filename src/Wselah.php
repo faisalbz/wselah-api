@@ -3,8 +3,8 @@
     namespace Faisalbz\WselahApi;
 	
 	/**
-		* Class WselahApi
-		* @package wselah
+		* Class Wselah
+		* @package WselahApi
 	*/
 	
     class Wselah {
