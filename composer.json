@@ -1,0 +1,17 @@
+{
+    "name": "faisalbz/wselah-api",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Faisalbz\\WselahApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Faisal AL-Otaibi",
+            "email": "faysl4041@gmail.com"
+        }
+    ],
+    "require": {}
+}
